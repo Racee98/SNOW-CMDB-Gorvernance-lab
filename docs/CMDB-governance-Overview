@@ -1,0 +1,23 @@
+## Purpose
+This document outlines the governance framework implemented in the 
+ServiceNow CMDB Governance Lab.
+
+## CI Classes Used
+- Business Service (cmdb_ci_service)
+- Application (cmdb_ci_appl)
+- Server (cmdb_ci_server)
+- Database (cmdb_ci_db_instance)
+
+## Relationship Types
+- Depends on::Used by — service dependency
+- Runs on::Runs for — application to server
+- Connects to::Connected by — server to database
+
+## Data Quality Controls
+- Business Rule: blocks CI saves without owner assigned
+- Import Set coalesce: prevents duplicate CI creation on re-import
+
+## Audit Readiness
+- All CIs have assigned owners
+- Dependency chain is fully documented
+- CMDB health reports provide continuous visibility
